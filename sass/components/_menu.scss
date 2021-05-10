@@ -1,0 +1,119 @@
+.menu-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $primaryWhiteColor;
+  text-align: left;
+  padding: 48px 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+
+  z-index: 1;
+
+  @media screen and (min-width: 320px) {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+
+    &.is-open {
+      display: block;
+    }
+  }
+}
+
+.nav-page,
+.contacts-mobile,
+.social-mobile {
+  @extend %list;
+}
+
+.nav-page {
+  @media screen and (min-width: 440px) {
+    margin-bottom: 302px;
+  }
+}
+
+.nav-page {
+  .link {
+    color: $titleTextColor;
+    font-weight: $fontWeightMedium;
+    font-size: 40px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    margin-bottom: 32px;
+
+    transition-property: color;
+    transition-duration: $transitionDuration;
+    transition-timing-function: $timingFunction;
+
+    &:hover,
+    &:focus {
+      color: $accentColor;
+    }
+  }
+
+  .link.current {
+    color: $accentColor;
+  }
+}
+
+.contacts-mobile {
+  .link {
+    color: $accentColor;
+    font-weight: $fontWeightMedium;
+    font-size: 34px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    margin-bottom: 32px;
+
+    transition-property: color;
+    transition-duration: $transitionDuration;
+    transition-timing-function: $timingFunction;
+
+    &:hover,
+    &:focus {
+      color: $accentColor;
+    }
+  }
+}
+
+.item-mail .link {
+  font-size: 24px;
+  color: $primaryTextColor;
+  margin-bottom: 64px;
+}
+
+.social-mobile {
+  display: flex;
+  flex-wrap: wrap;
+
+  .link {
+    color: $accentColor;
+    text-decoration: none;
+  }
+
+  .item {
+    padding: 0 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+    letter-spacing: 0.02em;
+    font-weight: $fontWeightMedium;
+    font-size: 18px;
+    line-height: 1.22;
+
+    &:nth-child(1) {
+      padding-left: 0;
+    }
+
+    &:nth-child(4) {
+      padding-right: 0;
+      border: none;
+    }
+  }
+}
